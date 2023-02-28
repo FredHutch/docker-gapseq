@@ -9,3 +9,7 @@ RUN cd /usr/local && git clone https://github.com/jotech/gapseq && cd gapseq && 
 RUN gapseq test
 # Download latest reference sequence database
 RUN cd /usr/local/gapseq && bash /usr/local/gapseq/src/update_sequences.sh
+# Install sybil
+RUN cd /usr/local/ && \
+    wget https://cran.r-project.org/src/contrib/Archive/sybil/sybil_2.2.0.tar.gz && \
+    R CMD INSTALL sybil_2.2.0.tar.gz
